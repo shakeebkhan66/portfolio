@@ -6,9 +6,15 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import '../constants/constant.dart';
 
 class LeftSideBody extends StatelessWidget {
-  const LeftSideBody({
+    LeftSideBody({
     Key? key,
   }) : super(key: key);
+
+
+   Uri emailUrl = Uri.parse("https://mail.google.com/mail/u/0/#inbox");
+   Uri githubUrl = Uri.parse("https://github.com/shakeebkhan66");
+   Uri facebookUrl = Uri.parse("https://www.facebook.com/");
+
 
   @override
   Widget build(BuildContext context) {

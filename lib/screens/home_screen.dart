@@ -70,8 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.symmetric(
+                     Padding(
+                      padding: const EdgeInsets.symmetric(
                           vertical: 27.0, horizontal: 20),
                       child: TitleBarRow(),
                     ),

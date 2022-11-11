@@ -4,10 +4,21 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants/constant.dart';
 import '../widgets/lets_talk_button.dart';
 
-class TitleBarRow extends StatelessWidget {
-  const TitleBarRow({
+class TitleBarRow extends StatefulWidget {
+  TitleBarRow({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<TitleBarRow> createState() => _TitleBarRowState();
+}
+
+class _TitleBarRowState extends State<TitleBarRow> {
+
+
+  final List isHovering = [
+    false, false, false, false, false, false, false, false,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,35 +55,61 @@ class TitleBarRow extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Text("Home",
-            style: GoogleFonts.secularOne(
-              color: kSecondColor,
-              fontSize: 16,
-            )),
+        InkWell(
+          onTap: (){},
+          onHover: (value){
+            setState(() {
+              value ? isHovering[0] = true : isHovering[0] = false;
+            });
+          },
+          child: Text("Home",
+              style: GoogleFonts.secularOne(
+                color: isHovering[0] ? const Color(0xffFF8381) : const Color(0xffF9AC66),
+                fontSize: 16,
+              )),
+        ),
         const SizedBox(
           width: 20.0,
         ),
-        Text("Works",
-            style: GoogleFonts.secularOne(
-              color: kSecondColor,
-              fontSize: 16,
-            )),
+        InkWell(
+          onTap: (){},
+          onHover: (value){
+            value ? isHovering[1] = true : isHovering[1] = false;
+          },
+          child: Text("Works",
+              style: GoogleFonts.secularOne(
+                color: isHovering[1] ? const Color(0xffFF8381) : const Color(0xffF9AC66),
+                fontSize: 16,
+              )),
+        ),
         const SizedBox(
           width: 20.0,
         ),
-        Text("Services",
-            style: GoogleFonts.secularOne(
-              color: kSecondColor,
-              fontSize: 16,
-            )),
+        InkWell(
+          onTap: (){},
+          onHover: (value){
+            value ? isHovering[2] = true : isHovering[2] = false;
+          },
+          child: Text("Services",
+              style: GoogleFonts.secularOne(
+                color: isHovering[2] ? const Color(0xffFF8381) : const Color(0xffF9AC66),
+                fontSize: 16,
+              )),
+        ),
         const SizedBox(
           width: 20.0,
         ),
-        Text("About me",
-            style: GoogleFonts.secularOne(
-              color: kSecondColor,
-              fontSize: 16,
-            )),
+        InkWell(
+          onTap: (){},
+          onHover: (value){
+            value ? isHovering[3] = true : isHovering[3] = false;
+          },
+          child: Text("About me",
+              style: GoogleFonts.secularOne(
+                color: isHovering[3] ? const Color(0xffFF8381) : const Color(0xffF9AC66),
+                fontSize: 16,
+              )),
+        ),
         const Spacer(),
         const LetsTalkButton(),
       ],
